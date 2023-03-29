@@ -1,0 +1,151 @@
+:root{
+    --vermelho: #E50914;
+    --preto: #141414;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*elementos base*/
+body{
+    background: var(--preto);
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+.logo-menu{
+    font-size: 25px;
+    color: var(--vermelho);
+    cursor: pointer;
+}
+
+header > .container-menu{
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-bar{
+    display: flex;
+    list-style: none;
+}
+.nav-item1, .nav-item2, .nav-item3{
+    margin-left: 4rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.nav-item1:hover, .nav-item2:hover, .nav-item3:hover{
+    color: var(--vermelho);
+    border-bottom: 1px solid var(--vermelho);
+}
+
+
+/*Relacionadas ao Filme principal*/
+
+.filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.50)100%), url('../Clone-Netflix/img/banner-big-bang.jpg');
+    height: 500px;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .descricao{
+    margin-bottom: 40px;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.titulo{
+    font-size: 40px;
+}
+
+.botao{
+    background-color: rgba(0,0,0,.50);
+    color: white;
+    border: none;
+    padding: 15px;
+    margin-right: 15px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+.botao:hover{
+    background-color: white;
+    color: black;
+}
+
+.botoes{
+    margin-left: 20px;
+}
+
+
+.container{
+    width: 100%;
+    margin-left: 20px;
+}
+ 
+.filme-principal .container{
+    width: 80%;
+}
+
+.box-img{
+    height: 200px;
+    width: 100%; 
+}
+
+.menu-mobile{
+    width: 26px;
+    height: 23px;
+    border: 1px solid var(--vermelho);
+    box-shadow: 1px 1px 4px 1px var(--vermelho);
+    background-color: var(--preto);
+    padding-top: 3px;
+    padding: 2px;
+    overflow: hidden;
+    display: none;
+}
+.barra1, .barra2, .barra3{
+   border: 1px solid var(--vermelho);
+   width: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 2px 0 3px 0;
+   transition: 0.75s;
+   
+}
+button.active > .barra2{
+    transform: translate(50px);
+}
+button.active > .barra1{
+    transform: translateY(5px) rotate(-45deg);
+}
+button.active > .barra3{
+    transform: translateY(-5px) rotate(45deg);
+}
+
+@media screen and (max-width:700px) {
+    .menu-mobile{
+        display: flex;
+        flex-direction: column;  
+    }
+    .barra1, .barra2, .barra3{
+       margin-bottom: 2px;    
+    }
+    button.active > .barra1{
+        transform: translateY(6px) rotate(-45deg);
+    }
+    button.active > .barra3{
+        transform: translateY(-6px) rotate(45deg);
+    }
+    .nav-bar{
+        display: none;
+    }
+}
